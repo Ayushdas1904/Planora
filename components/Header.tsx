@@ -1,6 +1,7 @@
 'use client'
 
 import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from "@clerk/nextjs";
+import BreadCrumbs from "./BreadCrumbs";
 
 export default function Header() {
     const {user} = useUser();
@@ -11,6 +12,9 @@ export default function Header() {
             {user?.firstName}{`'s`} Space
             </h1>
         )}
+
+        {/* breadcrumbs */}
+        <BreadCrumbs />
 
         <div>
             <SignedOut>
