@@ -93,24 +93,33 @@ function Sidebar() {
             </>
             
         )}
+
+        {/* Shared with me */}
+        {groupedData.editor.length > 0 && (
+            <>
+            <h2 className="text-gray-500 font-semibold text-sm">Shared With Me</h2>
+            {groupedData.editor.map((doc) => (
+                <SidebarOption key={doc.id} id={doc.id} href={`/doc/${doc.id}`} />
+            ))}
+            </>
+        )}
         </div>
         </>
     );
     return (
         <div className="p-2 md:p-5 bg-gray-400 relative">
             <div className="md:hidden">
-
-            <Sheet>
-                <SheetTrigger>
-                    <MenuIcon className="p-2 hover:opacity-30 rounded-lg" size={40}/>
-                </SheetTrigger>
-                <SheetContent side="left">
-                    <SheetHeader>
-                        <SheetTitle>Menu</SheetTitle>
-                        <div>{menuOptions}</div>
-                    </SheetHeader>
-                </SheetContent>
-            </Sheet>
+                <Sheet>
+                    <SheetTrigger>
+                        <MenuIcon className="p-2 hover:opacity-30 rounded-lg" size={40}/>
+                    </SheetTrigger>
+                    <SheetContent side="left">
+                        <SheetHeader>
+                            <SheetTitle>Menu</SheetTitle>
+                            <div>{menuOptions}</div>
+                        </SheetHeader>
+                    </SheetContent>
+                </Sheet>
             </div>
 
             <div className="hidden md:inline">

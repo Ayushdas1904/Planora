@@ -18,7 +18,7 @@ export default function SidebarOption({ href, id }: {
   if (!data) return null;
 
   return (
-    <Link href={href} className={`border p-2 rounded-md ${isActive ? "bg-gray-300 font-bold border-black" : "rounded border-gray-400"
+    <Link href={href} className={`border p-2 rounded-md ${isActive ? "bg-gray-300 font-bold border-black" : "rounded border-white"
       }`}>
       <p className="truncate">{data.title}</p>
     </Link>
